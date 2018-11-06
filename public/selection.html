@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title" charset="utf-8">
     <title>Game On</title>
 </head>
@@ -71,7 +72,7 @@
                         <center>
                             <h5 class="card-title">Not sure what you want to play?</h5>
                             <p class="card-text">Check out all existing events instead!</p>
-                            <a href="#" class="btn btn-primary">View All Events</a>
+                            <a href="/event/view" class="btn btn-primary" id="evtButton">View All Events</a>
                         </center>
                     </div>
                 </div>
@@ -79,5 +80,21 @@
         </div>
     </div>
 </body>
+<script>
+
+ $("#evtButton").on("click", function(event) {
+      event.preventDefault();
+
+      console.log("Fired");
+
+      // Question: What does this code do??
+      $.get("/event/view", function(results) {
+          console.log(results)
+      }
+       
+      )} 
+      );
+      
+</script>
 
 </html>
