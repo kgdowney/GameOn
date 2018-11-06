@@ -1,33 +1,26 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
+<div class='container'>
+  <div class="row">
+    <div class="col-sm">
+      <h1>
+        <center><span id='title'>Game On</span>
+      </h1>
+      </center>
     </div>
   </div>
+  <div class="row">
+    {{#each event}}
+    <div class="card">
+      <h5 class="card-header">{{eventName}}</h5>
+      <div class="card-body">
+        <h5 class="card-title">Event Stuff</h5>
+        <p class="card-text">Event Location: {{eventLocationName}}</p>
+        <p class="card-text">Event Date: {{eventDate}}</p>
+        <p class="card-text">Event Time: {{eventTime}}</p>
+        <p class="card-text">Game Name: {{gameName}}</p>
+        <a href="#" class="btn btn-primary">Join Up</a>
+        <a href="#" class="btn btn-primary">View Details</a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
 </div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Game On</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1>
+                    <center><span id="title">Game On</span></center>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 offset-sm-1">
+                <div class="jumbotron">
+                    <center>
+                        <h1 class="display-4">Create Event</h1>
+                    </center>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="createDate">Date</span>
+                        </div>
+                        <input type="date" class="form-control" placeholder="Date" id="evtDate" aria-label="date" aria-describedby="createDate">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="createTime">Time</span>
+                        </div>
+                        <input type="time" class="form-control" placeholder="Time" id="evtTime" aria-label="time" aria-describedby="createTime">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="createName">Event Name</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Name" id="evtName" aria-label="name" aria-describedby="createName">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="createGame">Game Name</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Game Name" id="gameName" aria-label="game"
+                            aria-describedby="createGame">
+                    </div>
+                    <center><a class="btn btn-primary btn-lg" href="#" id="eventCreate" role="button" data-toggle="modal" data-target="#createdSuccess">Create!</a></center>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="createdSuccess" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Event Created!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>You have successfully planned your event!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">View Event</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+ $("#eventCreate").on("click", function(event) {
+      event.preventDefault();
+
+
+      var newEvent = {
+        eventName: $("#evtName").val(),
+        eventDate: $("#evtDate").val(),
+        eventTime: $("#evtTime").val(),
+        gameName: $("#gameName").val()
+      };
+
+      console.log(newEvent);
+
+      // Question: What does this code do??
+      $.post("/event/add", newEvent)
+        .then(function(data) {
+            console.log(data.eventName);
+        });
+
+    });
+
+</script>
+
+</html>

@@ -1,3 +1,20 @@
+@font-face {
+  font-family: dnd;
+  src: local(dnd), url('../../assets/DnDC.ttf') format('opentype');
+}
+
 .list-group-item {
   line-height: 2.5;
+}
+
+#title {
+  font-family: dnd;
+  font-size: 128px;
+  font-stretch: extra-expanded;
+}
+
+#header {
+  /* background-image: url('../../assets/headerbackground.png'); */
+  background-size: contain;
+  /* opacity: .4; */
 }
