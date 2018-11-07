@@ -1,6 +1,6 @@
 @font-face {
   font-family: dnd;
-  src: local(dnd), url('../../assets/DnDC.ttf') format('opentype');
+  src: local(url), url('../assets/DnDC.ttf') format('truetype');
 }
 
 .list-group-item {
