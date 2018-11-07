@@ -16,10 +16,10 @@
         <div class="row">
             <div class="col-sm">
                 <div id="header">
-                <h1>
-                    <center><span id="title">Game On</span>
-                </h1>
-                </center>
+                    <h1>
+                        <center><span id="title">Game On</span>
+                    </h1>
+                    </center>
                 </div>
             </div>
         </div>
@@ -52,9 +52,9 @@
                             <h5 class="card-title">Find an existing group for your favorite game!</h5>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="Game Name" aria-label="Game Name"
-                                    aria-describedby="button-addon2">
+                                    aria-describedby="button-addon2" id="gameSearch" name="gameSearch">
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search!</button>
+                                    <button class="btn btn-outline-secondary" type="button" id="searchButton">Search!</button>
                                 </div>
                             </div>
                         </center>
@@ -72,7 +72,7 @@
                         <center>
                             <h5 class="card-title">Not sure what you want to play?</h5>
                             <p class="card-text">Check out all existing events instead!</p>
-                            <a href="/event/view" class="btn btn-primary" id="evtButton">View All Events</a>
+                            <a href="/viewevent" class="btn btn-primary" id="evtButton">View All Events</a>
                         </center>
                     </div>
                 </div>
@@ -82,19 +82,28 @@
 </body>
 <script>
 
- $("#evtButton").on("click", function(event) {
-      event.preventDefault();
+    $("#evtButton").on("click", function (event) {
+        event.preventDefault();
 
-      console.log("Fired");
+        console.log("Fired");
 
-      // Question: What does this code do??
-      $.get("/event/view", function(results) {
-          console.log(results)
-      }
-       
-      )} 
-      );
-      
+        // Question: What does this code do??
+        $.get("/viewevent", function (results) {
+            window.location.href = "/viewevent";
+
+        });
+    });
+
+    $("#searchButton").on("click", function (event) {
+        event.preventDefault();
+        var searchedGame = $("#gameSearch").val();
+        console.log(searchedGame);
+
+        $.get('/event/' + searchedGame, function (results) {
+            window.location.href = '/event/' + searchedGame;
+        })
+    })
+
 </script>
 
 </html>

@@ -7,8 +7,8 @@
       </center>
     </div>
   </div>
+  {{#each events}}
   <div class="row">
-    {{#each event}}
     <div class="card">
       <h5 class="card-header">{{eventName}}</h5>
       <div class="card-body">
@@ -21,6 +21,7 @@
         <a href="#" class="btn btn-primary">View Details</a>
       </div>
     </div>
-    {{/each}}
   </div>
+  {{/each}}
 </div>
+ 
