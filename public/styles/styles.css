@@ -1,6 +1,6 @@
 @font-face {
   font-family: dnd;
-  src: local(dnd), url('../../assets/DnDC.ttf') format('opentype');
+  src: local(dnd), url('../styles/assets/DnDC.ttf') format('opentype');
 }
 
 .list-group-item {
@@ -9,12 +9,40 @@
 
 #title {
   font-family: dnd;
+  font-family: 'Reenie Beanie', cursive;
   font-size: 128px;
   font-stretch: extra-expanded;
 }
 
+h1 {
+  font-family: 'Reenie Beanie', cursive;
+}
+
 #header {
-  /* background-image: url('../../assets/headerbackground.png'); */
+  background-image: url('../styles/assets/headerbackground.png');
   background-size: contain;
   /* opacity: .4; */
+}
+
+.container {
+  color: rgb(143, 142, 142);
+
+}
+
+body {
+ background-color: rgb(247, 212, 148);
+
+}
+
+.jumbotron {
+  padding: 4rem 2rem;
+  border-radius: 25px;
+  border: 2px solid rgb(143, 142, 142);
+  background-color: rgb(248, 198, 106)
+}
+
+.btn-primary {
+  color: #d2cdcd;
+  background-color: #8f8e8e;
+  border-color: #ffffff;
 }
