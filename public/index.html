@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title" charset="utf-8">
+<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+=======
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+>>>>>>> 7d6f2b28e7778588986c14e860af06488035af6b
     <title>Game On</title>
 
 </head>
@@ -24,7 +29,15 @@
                     <center><p class="lead">We are an all in one LFG tool for your favorite board games!</p></center>
                     <hr class="my-4">
                     <center><p>It's free and easy to use! Sign in to get started!</p></center>
-                    <center><a class="btn btn-primary btn-lg" href="/select" role="button">Log In!</a></center>
+                    <center><form id="signin" name="signin" method="post" action="signin">
+                            <label for="email">User Name</label>
+                            <input class="text" name="userName" type="text" />
+                            <label for="password">Password</label>
+                            <input name="password" type="password" />
+                    </form></center>
+                    <center><a class="btn btn-primary btn-lg" href="/select" role="button" id='authButton'>Log In!</a>
+                        <a class="btn btn-primary btn-lg" href="/signup" role="button" id='authButton'>Sign Up!</a>
+                    </center>
                 </div>
             </div>
         </div>
