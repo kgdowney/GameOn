@@ -201,7 +201,7 @@ border-radius: 3px;
 .jumbotron {
   padding: 1rem 5rem;
   border-radius: 3px;
-  border: 1px solid rgb(143, 142, 142);
+  /* border: 1px solid rgb(143, 142, 142); */
   background-color: white;
   margin-top: 10px;
 }
@@ -210,10 +210,11 @@ border-radius: 3px;
   margin-top: 50px
 }
 
-.btn-primary {
+.btn, .btn-primary {
   color: rgb(143, 142, 142);
   background-color: rgba(255, 255, 255, 0.863);
   border-color: rgb(143, 142, 142);
+  margin: 2px;
 }
 
 /* .btn.btn-primary{ */
