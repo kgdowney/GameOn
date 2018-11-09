@@ -78,7 +78,7 @@ module.exports = function (passport, user) {
 
 
 
-        }
+        } 
 
 
 
@@ -91,14 +91,14 @@ module.exports = function (passport, user) {
 
             // by default, local strategy uses username and password, we will override with email
             usernameField: 'email',
-            passwordField: 'password',
+            passwordField: 'password', 
             passReqToCallback: true // allows us to pass back the entire request to the callback
         },
 
         function (req, email, password, done) {
 
             var User = user;
-
+            console.log(User.password)
             var isValidPassword = function (userpass, password) {
                 return bCrypt.compareSync(password, userpass);
             }
@@ -106,6 +106,7 @@ module.exports = function (passport, user) {
             User.findOne({ where: { email: email } }).then(function (user) {
 
                 if (!user) {
+                    console.log("Bad email")
                     return done(null, false, { message: 'Email does not exist' });
                 }
 
