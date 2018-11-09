@@ -24,13 +24,14 @@
                     <center><p class="lead">We are an all in one LFG tool for your favorite board games!</p></center>
                     <hr class="my-4">
                     <center><p>It's free and easy to use! Sign in to get started!</p></center>
-                    <center><form id="signin" name="signin" method="post" action="signin">
+                    <center><form id="signin" name="signin" method="POST" action="/signin">
                             <label for="email">User Name</label>
-                            <input class="text" name="userName" type="text" />
+                            <input class="text" name="email" type="text" />
                             <label for="password">Password</label>
                             <input name="password" type="password" />
+                            <input class="btn" type="submit" value="Sign In" />
                     </form></center>
-                    <center><a class="btn btn-primary btn-lg" href="/select" role="button" id='authButton'>Log In!</a>
+                    <center>
                         <a class="btn btn-primary btn-lg" href="/signup" role="button" id='authButton'>Sign Up!</a>
                     </center>
                 </div>
