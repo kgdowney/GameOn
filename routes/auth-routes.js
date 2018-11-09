@@ -12,7 +12,7 @@ module.exports = function (app, passport) {
 
         successRedirect: '/select',
 
-        failureRedirect: '/',
+        failureRedirect: '/gasfwfadsfsda',
     }));
 
 

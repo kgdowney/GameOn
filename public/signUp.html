@@ -73,18 +73,18 @@
         event.preventDefault();
 
 
-        var newUser = {
-            username: $("#userName").val(),
-            firstname: $("#firstName").val(),
-            lastname: $("#lastName").val(),
-            email: $("#eMail").val(),
-            password: $('#password').val()
+        var payload = {
+            username: $("#userName").val().trim(),
+            firstname: $("#firstName").val().trim(),
+            lastname: $("#lastName").val().trim(),
+            email: $("#eMail").val().trim(),
+            password: $('#password').val().trim()
         };
 
-        console.log(newUser);
+        console.log(payload);
 
         // Question: What does this code do??
-        $.post("/signup", newUser)
+        $.post("/signup", payload)
             .then(function (data) {
                  console.log(data);
              });

@@ -11,6 +11,10 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static("public"));
+
 
 
 // Middleware
@@ -40,17 +44,13 @@ require("./routes/viewRoutes")(app);
 require('./routes/auth-routes')(app, passport);
 
 //load passport strategies
-require('./config/passport/passport.js')(passport, db.users);
+require('./config/passport/passport.js')(passport, db.user);
 
 var syncOptions = { force: false };
 
 
 
 
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(express.static("public"));
 
 
 // If running a test, set syncOptions.force to true
