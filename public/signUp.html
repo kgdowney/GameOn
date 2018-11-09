@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <title>Game On</title>
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -25,55 +27,73 @@
                     <center>
                         <h1 class="display-4">Sign Up!</h1>
                     </center>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="signUpEmail">Email</span>
+                    <form method="POST" action="/signup">
+
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="signUpEmail">Email</span>
+                            </div>
+                            <input type="email" class="form-control" placeholder="Email" id="eMail" name="email"
+                                aria-label="email" aria-describedby="eMail">
                         </div>
-                        <input type="email" class="form-control" placeholder="Email" id="eMail" name="sgnUpEmail"
-                            aria-label="email" aria-describedby="eMail">
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="signUpFirstName">First Name: </span>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="signUpFirstName">First Name: </span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="First Name" id="firstname" name="firstname"
+                                aria-label="first name" aria-describedby="First Name">
                         </div>
-                        <input type="text" class="form-control" placeholder="First Name" id="firstName" name="sgnUpFirstName"
-                            aria-label="first name" aria-describedby="First Name">
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="signUpLastName">Last Name:</span>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="signUpLastName">Last Name:</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Last Name" id="lastname" name="lastname"
+                                aria-label="last name" aria-describedby="Last Name">
                         </div>
-                        <input type="text" class="form-control" placeholder="Last Name" id="lastName" name="sgnUpLastName"
-                            aria-label="last name" aria-describedby="Last Name">
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="signUpUserName">User Name: </span>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="signUpUserName">User Name: </span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="User Name" id="username" name="username"
+                                aria-label="game" aria-describedby="createGame">
                         </div>
-                        <input type="text" class="form-control" placeholder="User Name" id="userName" name="sgnUpUserName"
-                            aria-label="game" aria-describedby="createGame">
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="signUpPassword">Password</span>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="signUpPassword">Password</span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Password" id="password" name="password"
+                                aria-label="game" aria-describedby="createGame">
                         </div>
-                        <input type="password" class="form-control" placeholder="Password" id="password" name="sgnUpPassword"
-                            aria-label="game" aria-describedby="createGame">
-                    </div>
-                    <center><a class="btn btn-primary btn-lg" href="#" id="accountCreate" role="button" 
-                           >Create!</a></center>
+
+                        <center><input class="btn" type="submit" value="Sign Up" id="accountCreate" /></center>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </body>
 <script>
-    $("#accountCreate").on("click", function (event) {
-        event.preventDefault();
-        $.post("/signup")
-            .then(function (data) {
-                console.log(data);
-            });
-    });
+    // $("#accountCreate").on("click", function (event) {
+    //     event.preventDefault();
+
+
+    //     var payload = {
+    //         username: $("#userName").val().trim(),
+    //         firstname: $("#firstName").val().trim(),
+    //         lastname: $("#lastName").val().trim(),
+    //         email: $("#eMail").val().trim(),
+    //         password: $('#password').val().trim()
+    //     };
+
+    //     console.log(payload);
+
+    //     // Question: What does this code do??
+    //     $.post("/signup", payload)
+    //         .then(function (data) {
+    //             console.log(data);
+    //         });
+    // });
 </script>
+
 </html>
