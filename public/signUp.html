@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <title>Game On</title>
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -29,39 +31,38 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="signUpEmail">Email</span>
                         </div>
-                        <input type="email" class="form-control" placeholder="Email" id="eMail" name="sgnUpEmail"
-                            aria-label="email" aria-describedby="eMail">
+                        <input type="email" class="form-control" placeholder="Email" id="eMail" name="email" aria-label="email"
+                            aria-describedby="eMail">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="signUpFirstName">First Name: </span>
                         </div>
-                        <input type="text" class="form-control" placeholder="First Name" id="firstName" name="sgnUpFirstName"
+                        <input type="text" class="form-control" placeholder="First Name" id="firstName" name="firstname"
                             aria-label="first name" aria-describedby="First Name">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="signUpLastName">Last Name:</span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Last Name" id="lastName" name="sgnUpLastName"
+                        <input type="text" class="form-control" placeholder="Last Name" id="lastName" name="lastname"
                             aria-label="last name" aria-describedby="Last Name">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="signUpUserName">User Name: </span>
                         </div>
-                        <input type="text" class="form-control" placeholder="User Name" id="userName" name="sgnUpUserName"
+                        <input type="text" class="form-control" placeholder="User Name" id="userName" name="username"
                             aria-label="game" aria-describedby="createGame">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="signUpPassword">Password</span>
                         </div>
-                        <input type="password" class="form-control" placeholder="Password" id="password" name="sgnUpPassword"
+                        <input type="password" class="form-control" placeholder="Password" id="password" name="password"
                             aria-label="game" aria-describedby="createGame">
                     </div>
-                    <center><a class="btn btn-primary btn-lg" href="#" id="accountCreate" role="button" 
-                           >Create!</a></center>
+                    <center><input class="btn" type="submit" value="Sign Up" id="accountCreate" /></center>
                 </div>
             </div>
         </div>
@@ -70,10 +71,24 @@
 <script>
     $("#accountCreate").on("click", function (event) {
         event.preventDefault();
-        $.post("/signup")
+
+
+        var newUser = {
+            username: $("#userName").val(),
+            firstname: $("#firstName").val(),
+            lastname: $("#lastName").val(),
+            email: $("#eMail").val(),
+            password: $('#password').val()
+        };
+
+        console.log(newUser);
+
+        // Question: What does this code do??
+        $.post("/signup", newUser)
             .then(function (data) {
-                console.log(data);
-            });
+                 console.log(data);
+             });
     });
 </script>
+
 </html>

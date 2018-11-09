@@ -2,8 +2,8 @@ require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
-var passport   = require('passport');
-var session    = require('express-session');
+var passport = require('passport');
+var session = require('express-session');
 var db = require("./models");
 
 
@@ -14,10 +14,6 @@ var PORT = process.env.PORT || 3000;
 
 
 // Middleware
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(express.static("public"));
 
 // For Passport
  
@@ -41,13 +37,21 @@ require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/post-api-routes")(app);
 require("./routes/viewRoutes")(app);
-var authRoute = require('./routes/auth-routes')(app, passport);
+require('./routes/auth-routes')(app, passport);
+
+//load passport strategies
+require('./config/passport/passport.js')(passport, db.users);
 
 var syncOptions = { force: false };
 
 
-//load passport strategies
-require('./config/passport/passport.js')(passport, db.users);
+
+
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static("public"));
+
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
