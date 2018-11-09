@@ -1,48 +1,240 @@
-@font-face {
-  font-family: dnd;
-  src: local(dnd), url('../styles/assets/DnDC.ttf') format('opentype');
-}
+
+@import url('https://fonts.googleapis.com/css?family=Lekton');
+@import url('https://fonts.googleapis.com/css?family=Text+Me+One');
+
 
 .list-group-item {
   line-height: 2.5;
 }
 
 #title {
-  font-family: dnd;
-  font-family: 'Reenie Beanie', cursive;
-  font-size: 128px;
-  font-stretch: extra-expanded;
+  font-family: 'Text Me One', sans-serif;
+  color: #000000;
+  font-size: 50px;
+  /* text-shadow: 2px 8px rgb(233, 233, 233); */
+  padding: 170px;
+
+
+
 }
 
-h1 {
-  font-family: 'Reenie Beanie', cursive;
+.col-sm{
+  /* font-size: 10px;
+  padding: 100px; */
+  font-family: 'Text Me One', sans-serif;
+  color: #000000;
+  padding-top: 40px;
+  animation: 
+  title2
+  15s
+  ease-out
+  0s
+  alternate
+  infinite
+  none
+  running;
+
 }
+
+@keyframes title2 {
+  0% {
+    right:50%;
+    opacity: 0;
+
+  }
+  100% {
+    right: 25%;
+    opacity: 0.5;
+  }
+}
+
+.display-4 {
+  font-family: 'Text Me One', sans-serif;
+  color: #000000;
+  font-size: 35px !important;
+  opacity: .5;
+  animation: 
+  display
+  5s
+  ease-out
+  0s
+  alternate
+  none
+  running;
+}
+
+@keyframes display {
+  0% {
+    transform: scale(1.1);
+        opacity: 0;
+
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+
+@keyframes title2 {
+  0% {
+    right:50%;
+    opacity: 0;
+
+  }
+  100% {
+    right: 25%;
+    opacity: 0.5;
+  }
+}
+
+
 
 #header {
-  background-image: url('../styles/assets/headerbackground.png');
-  background-size: contain;
-  /* opacity: .4; */
+  background-image: url('../styles/assets/d20-clipart-drawn-7.png');
+  background-repeat:no-repeat;
+  background-size:auto;
+  padding: 88px;
+  animation: 
+    header
+    10s
+    ease-out
+    0s
+    alternate
+    infinite
+    none
+    running;
 }
 
-.container {
+/* @keyframes header1 {
+  from {background-size: 100px;
+  opacity: .1}
+  to {background-size: 200px;}
+} */
+
+@keyframes header {
+  0% {
+    transform: scale(.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(.9);
+  }
+}
+.card {
+ border: white;
+ /* border: 1px rgb(143, 142, 142);
+ border-style: groove; */
+ text-align: center;
+ 
+
+ }
+
+ #card1{
+   /* right: 50px; */
+   height:250px;
+   width: 350px;
+ }
+
+ #card2 {
+   /* right: 50px; */
+   height:250px;
+   width: 350px;
+   top: 50px;
+
+ }
+
+ #card3 {
+   height: 250px;
+   width: 350px;
+   top: 100px;
+   /* padding: 10px; */
+ }
+ 
+ #card-body3 {
+   padding: 19px;
+ }
+
+ 
+
+.card-header:first-child {
+       /* margin-bottom: 0;  */
+    background-color: white;
+    border-bottom: white;
+    font-weight: bold;
+    text-align: center !important;
+    font-stretch: expanded;
+
+ }
+
+/* .container {
   color: rgb(143, 142, 142);
 
+} */
+
+body::selection{
+  background-color: rgb(143, 142, 142) !important;
+  color: white !important;
 }
 
-body {
+body{
  background-color: rgb(247, 212, 148);
+ font-size: 15px;
+ font-family: 'Lekton', sans-serif;
+ color: rgb(143, 142, 142)
+}
 
+
+h5 {
+  font-size: 15px;
+  
+border: 1px dotted rgb(143, 142, 142);
+padding: 6px;
+border-radius: 3px;
+
+}
+
+.display-4 {
+  font-size: 3.5rem;
 }
 
 .jumbotron {
-  padding: 4rem 2rem;
-  border-radius: 25px;
-  border: 2px solid rgb(143, 142, 142);
-  background-color: rgb(248, 198, 106)
+  padding: 1rem 5rem;
+  border-radius: 3px;
+  border: 1px solid rgb(143, 142, 142);
+  background-color: white;
+  margin-top: 10px;
+}
+
+.jumbotron.jumbotron2 {
+  margin-top: 50px
 }
 
 .btn-primary {
-  color: #d2cdcd;
-  background-color: #8f8e8e;
-  border-color: #ffffff;
+  color: rgb(143, 142, 142);
+  background-color: rgba(255, 255, 255, 0.863);
+  border-color: rgb(143, 142, 142);
 }
+
+/* .btn.btn-primary{ */
+  /* margin: center; */
+/* } */
+
+/* .input-group .form-control::placeholder{
+  background-color: #000000;
+} */
+
+ /* .btn-outline-secondary:hover {
+  border: none;
+}  */
+
+.btn.btn-primary:hover {
+  background-color: rgb(143, 142, 142) !important;
+  border: none
+} 
+
+/* .btn:active {
+outline: none !important;
+border-color: #000000;
+
+} */
