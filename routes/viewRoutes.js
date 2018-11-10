@@ -5,11 +5,30 @@ module.exports = function(app) {
         db.Event.findAll({}).then(function(event) {
 
           var hbsObject = {
-            events: event
+            events: event,
+            user: req.user
           }
 
           // console.log(events);
           res.render("index", hbsObject);
         });
       });
+
+    app.get("/myevents", function(req, res) {
+      db.Event.findAll({
+        where: {
+          attendees: {
+            $like: '%' + req.user.firstname + " " + req.user.lastname + '%'
+          }
+        }
+      }).then(function(event) {
+
+        var hbsObject = {
+          events: event,
+          user: req.user
+        }
+        res.render("event", hbsObject)
+    });
+
+  });
 }

@@ -7,48 +7,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title" charset="utf-8">
+    <script src="js/eventCreate.js"></script>
     <title>Game On</title>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-sm">
                 <div id="header">
                     <h1>
-                        <center><span id="title">Game On</span>
+                        <span id="title">Game On</span>
                     </h1>
-                    </center>
                 </div>
-            </div>
         </div>
         <div class="row">
             <div class="col-sm-4">
-                <div class="card">
+                <div class="card" id="card1">
                     <div class="card-header">
                         <center>
-                            Create Event!
+                            Create Event
                         </center>
                     </div>
                     <div class="card-body">
-                        <center>
+                        
                             <h5 class="card-title">Start a Meet-up for your favorite game!</h5>
                             <p class="card-text">Have a group set up in minutes</p>
                             <a href="/createevent" class="btn btn-primary">Create Event</a>
-                        </center>
+                        
                     </div>
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="card">
+                <div class="card" id="card2">
                     <div class="card-header">
                         <center>
-                            Search Specific Games!
+                            Search Specific Games
                         </center>
                     </div>
                     <div class="card-body">
-                        <center>
+                        
                             <h5 class="card-title">Find an existing group for your favorite game!</h5>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="Game Name" aria-label="Game Name"
@@ -57,23 +56,22 @@
                                     <button class="btn btn-outline-secondary" type="button" id="searchButton">Search!</button>
                                 </div>
                             </div>
-                        </center>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="card">
+            <div class="col-sm-4" >
+                <div class="card" class="col-offset-3" id="card3">
                     <div class="card-header">
                         <center>
-                            View All Events!
+                            View All Events
                         </center>
                     </div>
-                    <div class="card-body">
-                        <center>
+                    <div class="card-body" id="card-body3">
+                        
                             <h5 class="card-title">Not sure what you want to play?</h5>
-                            <p class="card-text">Check out all existing events instead!</p>
+                            <p class="card-text">Check out all existing events instead</p>
                             <a href="/viewevent" class="btn btn-primary" id="evtButton">View All Events</a>
-                        </center>
+                        
                     </div>
                 </div>
             </div>
