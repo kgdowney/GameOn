@@ -1,0 +1,91 @@
+<nav class="navbar navbar-dark">
+    <a class="navbar-brand" href="/select">Welcome {{firstname}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/select">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <form class="form-inline">
+                <button class="btn btn-sm btn-outline-secondary" type="button" href="/logout" role="button" id='logout'>Log
+                    Out</button>
+                <button class="btn btn-sm btn-outline-secondary" type="button" href="/myevents" role="button" id='myEvents'>My
+                    Events</button>
+
+            </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h1>
+                <center><span id="title2">Game On</span></center>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-10 offset-sm-1">
+            <div class="jumbotron jumbotron2">
+                <center>
+                    <h1 class="display-4">Create Event</h1>
+                </center>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="createDate">Date</span>
+                    </div>
+                    <input type="date" class="form-control" placeholder="Date" id="evtDate" aria-label="date"
+                        aria-describedby="createDate">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="createTime">Time</span>
+                    </div>
+                    <input type="time" class="form-control" placeholder="Time" id="evtTime" aria-label="time"
+                        aria-describedby="createTime">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="createName">Event Name</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Name" id="evtName" aria-label="name"
+                        aria-describedby="createName">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="createGame">Game Name</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Game Name" id="gameName" aria-label="game"
+                        aria-describedby="createGame">
+                </div>
+                <center><a class="btn btn-primary btn-lg" href="#" id="eventCreate" role="button" data-toggle="modal"
+                        data-target="#createdSuccess">Create!</a></center>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="createdSuccess" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Event Created!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>You have successfully planned your event!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="modalViewEvents">View Events</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
