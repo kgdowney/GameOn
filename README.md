@@ -1,6 +1,6 @@
 # **Project 2 Outline**
 ## **GameOn**
-> University of Arizona Coding Bootcamp / Spring 2019
+> University of Arizona Coding Bootcamp / Fall 2018
 
 ### **PROJECT SUMMARY**
 > Our app is based on four principles:
