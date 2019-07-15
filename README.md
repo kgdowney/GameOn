@@ -11,7 +11,17 @@
 > 4. Find events near you.
 
 #### *Group Project Members*
-Anthony Demott / David Barton / Jorge Valencia / Keith Downey
+Anthony Demott - Handled Backend Express Routes, HandleBars Templater & assisted with front end/Passport Authentication
+David Barton - Handled Passport Authorization
+Jorge Valencia - Handled Front End (HTML/CSS)
+Keith Downey - Handled Node Server, assisted with front end & covered project presentation.
+
+#### *Demo*
+Give our application a try! You can either sign up with your own information or use our test account:
+Username: testrun@gmail.com
+Password: Tester123
+
+You can create your own events, look at existing ones already created, and view your own events as well from the panel drop down in the top.  
 
 ### **REQUIREMENTS**
  - [x] Uses Node & Express Web Server
